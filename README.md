@@ -119,6 +119,7 @@ manchester-airbnb-recommender/
 ---
 
 ## 5. Setup & Installation
+```bash
 # clone repo
 git clone https://github.com/<your-username>/manchester-airbnb-recommender.git
 cd manchester-airbnb-recommender
@@ -129,6 +130,8 @@ source .venv/bin/activate     # on Windows: .venv\Scripts\activate
 
 # install dependencies
 pip install -r requirements.txt
+
+```
 
 ---
 
