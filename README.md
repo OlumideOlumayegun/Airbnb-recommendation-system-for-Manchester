@@ -166,38 +166,45 @@ clustering:
 
 ## 7. Running the Pipeline
 ### 7.1 Train Clustering Models
+
+```bash
 python scripts/run_full_pipeline.py
+
+```
 
 
 This will:
 
-Load and preprocess Airbnb listings
+- Load and preprocess Airbnb listings
 
-Retrieve or load neighbourhood & venue data
+- Retrieve or load neighbourhood & venue data
 
-Train K-Means for listings and neighbourhoods
+- Train K-Means for listings and neighbourhoods
 
-Save trained models to models/
+- Save trained models to models/
 
-Optionally generate Folium maps in outputs/
+- Optionally generate Folium maps in outputs/
 
 ### 7.2 Demo Recommendation
+
+```bash
 python scripts/demo_recommendation.py
 
+```
 
 This script runs a demo scenario similar to the report:
 
-Room type: private room
+- Room type: private room
 
-Price: £55
+- Price: £55
 
-Minimum nights: 2
+- Minimum nights: 2
 
-Number of reviews: 100
+- Number of reviews: 100
 
-Availability: 340 days
+- Availability: 340 days
 
-Neighbourhood: cluster with Chinese & fast-food restaurants, supermarkets/markets (Cluster 5) 
+- Neighbourhood: cluster with Chinese & fast-food restaurants, supermarkets/markets (Cluster 5) 
 
 It prints a small table of recommended listings and can save a map of recommended listings.
 
@@ -205,22 +212,20 @@ It prints a small table of recommended listings and can save a map of recommende
 
 You can extend this project by:
 
-Adding more sophisticated recommendation logic (e.g. distance to city centre, stadiums, universities)
+- Adding more sophisticated recommendation logic (e.g. distance to city centre, stadiums, universities)
 
-Integrating a simple web app (Flask/FastAPI) to expose an API
+- Integrating a simple web app (Flask/FastAPI) to expose an API
 
-Deployed as a containerised service on Azure / AWS
+- Deployed as a containerised service on Azure / AWS
 
 ## 9. License
 
-MIT (or any other you prefer).
+MIT
 
 ## 10. Acknowledgements
 
-Inside Airbnb
+- Inside Airbnb for the listing data
 
-for the listing data
+- ArcGIS and Foursquare for geocoding and venue APIs
 
-ArcGIS and Foursquare for geocoding and venue APIs
-
-Original project report and methodology documented in “Airbnb Recommendation System for Manchester Neighbourhoods Using K-Means Clustering and Foursquare API in Python”.
+- Original project report and methodology documented in “Airbnb Recommendation System for Manchester Neighbourhoods Using K-Means Clustering and Foursquare API in Python”.
