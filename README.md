@@ -31,7 +31,7 @@ The recommendation engine then cross-filters listings and neighbourhoods to prod
 
 - **Airbnb Listings for Greater Manchester**  
   - Source: [Inside Airbnb](http://insideairbnb.com/get-the-data.html)  
-  - File: `data/raw/listings_greater_manchester.csv`  
+  - Files: `data/raw/manchester_listings.csv` and `data/raw/manchester_neibourhoods.csv`
   - Includes: `id`, `neighbourhood_group`, `neighbourhood`, `latitude`, `longitude`, `room_type`, `price`, `minimum_nights`, `number_of_reviews`, `availability_365`, etc.  
 
 - **Geographical Coordinates of Manchester Neighbourhoods**  
@@ -96,23 +96,12 @@ manchester-airbnb-recommender/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── config.example.yml
 ├── data/
 │   ├── raw/
 │   └── external/
-├── models/
 ├── notebooks/
 │   └── 01_manchester_airbnb_exploration.ipynb
-├── src/
-│   ├── config.py
-│   ├── data.py
-│   ├── features.py
-│   ├── clustering.py
-│   ├── recommend.py
-│   └── viz.py
-└── scripts/
-    ├── run_full_pipeline.py
-    └── demo_recommendation.py
+
 
 ```
 
@@ -135,80 +124,8 @@ pip install -r requirements.txt
 
 ---
 
-## 6. Configuration
 
-Copy the example config and edit:
-
-```bash
-cp config.example.yml config.yml
-
-```
-config.yml:
-
-```yaml
-data:
-  listings_csv: "data/raw/listings_greater_manchester.csv"
-  neighbourhoods_csv: "data/external/manchester_neighbourhoods.csv"
-
-foursquare:
-  api_key: "YOUR_FSQ_API_KEY"
-
-arcgis:
-  api_key: "YOUR_ARCGIS_API_KEY"
-
-clustering:
-  listings_n_clusters: 10
-  neighbourhoods_n_clusters: 5
-
-```
-
----
-
-## 7. Running the Pipeline
-### 7.1 Train Clustering Models
-
-```bash
-python scripts/run_full_pipeline.py
-
-```
-
-
-This will:
-
-- Load and preprocess Airbnb listings
-
-- Retrieve or load neighbourhood & venue data
-
-- Train K-Means for listings and neighbourhoods
-
-- Save trained models to models/
-
-- Optionally generate Folium maps in outputs/
-
-### 7.2 Demo Recommendation
-
-```bash
-python scripts/demo_recommendation.py
-
-```
-
-This script runs a demo scenario similar to the report:
-
-- Room type: private room
-
-- Price: £55
-
-- Minimum nights: 2
-
-- Number of reviews: 100
-
-- Availability: 340 days
-
-- Neighbourhood: cluster with Chinese & fast-food restaurants, supermarkets/markets (Cluster 5) 
-
-It prints a small table of recommended listings and can save a map of recommended listings.
-
-## 8. Extending the Project
+## 6. Extending the Project
 
 You can extend this project by:
 
@@ -218,11 +135,11 @@ You can extend this project by:
 
 - Deployed as a containerised service on Azure / AWS
 
-## 9. License
+## 7. License
 
 MIT
 
-## 10. Acknowledgements
+## 8. Acknowledgements
 
 - Inside Airbnb for the listing data
 
