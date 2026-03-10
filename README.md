@@ -110,8 +110,8 @@ manchester-airbnb-recommender/
 ## 5. Setup & Installation
 ```bash
 # clone repo
-git clone https://github.com/<your-username>/manchester-airbnb-recommender.git
-cd manchester-airbnb-recommender
+git clone https://github.com/OlumideOlumayegun/Airbnb-recommendation-system-for-Manchester.git
+cd Airbnb-recommendation-system-for-Manchester
 
 # create and activate virtual environment (optional but recommended)
 python -m venv .venv
