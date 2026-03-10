@@ -5,3 +5,4 @@ geocoder
 folium
 requests
 scikit-learn
+html2image
